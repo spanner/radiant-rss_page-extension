@@ -2,7 +2,7 @@
 
 This is a simple thing that adds a few radius tags and makes it very easy to serve RSS feeds. The assumption is that your feed has a root page: might be your blog, might be the home page if you want to serve a site feed. The feed will show everything below that page in descending order of publication date. Some tree-reading is added to the Page class to get all the descendants of a given page and we apply some crude filters to omit non-visible and non-html pages. That is all.
 
-The extension adds a 'Rss Feed' page type, which forces the right layout (and therefore content-type) and labels your page nicely in the tree, but doesn't do much else. You can use the RSS tags in any page.
+The 'Rss Feed' page type forces the right layout (and therefore content-type) and labels your page nicely in the tree, but doesn't do much else. You can use the RSS tags in any page.
 
 We also have a similar [podcast_page](https://github.com/spanner/radiant-podcast_page-extension/tree) extension. It does exactly the same thing for podcasts, and ought to be made part of this one, but at the moment it requires some updates to the core RSS library so I've kept it separate. This one works as is.
 

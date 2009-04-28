@@ -1,10 +1,10 @@
 # RSS Page extension
 
-This is a simple thing that adds a few radius tags and makes it very easy to serve RSS feeds. The assumption is that your feed has a root page: might be your blog, might be the home page if you want to serve a site feed. The feed will show everything below that page in descending order of publication date. That is all.
+This is a simple thing that adds a few radius tags and makes it very easy to serve RSS feeds. The assumption is that your feed has a root page: might be your blog, might be the home page if you want to serve a site feed. The feed will show everything below that page in descending order of publication date. Some tree-reading is added to the Page class to get all the descendants of a given page. That is all.
 
-The extension adds a 'Feed' page type, which forces the right layout (and therefore content-type) and labels your page nicely in the tree, but doesn't do much else. You can use the RSS tags in any page.
+The extension adds a 'Rss Feed' page type, which forces the right layout (and therefore content-type) and labels your page nicely in the tree, but doesn't do much else. You can use the RSS tags in any page.
 
-We also have a similar [podcast_page](https://github.com/spanner/radiant-podcast_page-extension/tree) extension.
+We also have a similar [podcast_page](https://github.com/spanner/radiant-podcast_page-extension/tree) extension. It does exactly the same thing for podcasts, and ought to be made part of this one, but at the moment it requires some updates to the core RSS library so I've kept it separate. This one works as is.
 
 ## Requirements
 
@@ -30,11 +30,11 @@ New but simple: should just work. No tests yet.
 
 	<r:rss [format="0.9|1.0|2.0"] [title="defaults to site title or root page"] [limit="20"] [root="page url. defaults to home page"] />
 
-Feeds should be served as application/rss+xml. Setting page type to 'Feed' will do that for you and incidentally create an RSS layout if there isn't one already.
+Feeds should be served as application/rss+xml. Setting page type to `Rss Feed` will do that for you and incidentally create an `RSS` layout if there isn't one already.
 
 ## Author & Copyright
 
-William Ross, for spanner. will at spanner.org
-Copyright 2009 spanner ltd
-Released under the same terms as Rails and/or Radiant
+* William Ross, for spanner. will at spanner.org
+* Copyright 2009 spanner ltd
+* Released under the same terms as Rails and/or Radiant
 

@@ -1,6 +1,6 @@
 # RSS Page extension
 
-This is a simple thing that adds a few radius tags and makes it very easy to serve RSS feeds. The assumption is that your feed has a root page: might be your blog, might be the home page if you want to serve a site feed. The feed will show everything below that page in descending order of publication date. Some tree-reading is added to the Page class to get all the descendants of a given page. That is all.
+This is a simple thing that adds a few radius tags and makes it very easy to serve RSS feeds. The assumption is that your feed has a root page: might be your blog, might be the home page if you want to serve a site feed. The feed will show everything below that page in descending order of publication date. Some tree-reading is added to the Page class to get all the descendants of a given page and we apply some crude filters to omit non-visible and non-html pages. That is all.
 
 The extension adds a 'Rss Feed' page type, which forces the right layout (and therefore content-type) and labels your page nicely in the tree, but doesn't do much else. You can use the RSS tags in any page.
 
@@ -27,10 +27,9 @@ If you're not using multi_site, we like to have a site.title and site.url in Rad
 New but simple: should just work. No tests yet.
 
 ## Usage
+	<r:find url="/"><r:rss [format="0.9|1.0|2.0"] [title="defaults to page title"] [limit="20"] /></r:find>
 
-	<r:rss [format="0.9|1.0|2.0"] [title="defaults to site title or root page"] [limit="20"] [root="page url. defaults to home page"] />
-
-Feeds should be served as application/rss+xml. Setting page type to `Rss Feed` will do that for you and incidentally create an `RSS` layout if there isn't one already.
+Feeds should be served as application/rss+xml. Setting page type to `Rss Feed` will do that for you, create an `RSS` layout, if there isn't one already, and force the page to use that layout.
 
 ## Author & Copyright
 
